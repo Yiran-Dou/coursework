@@ -1,0 +1,287 @@
+
+/* INTERACTIVE MAP PAGE */
+body{margin: 0; padding: 0;}
+
+
+
+
+
+#map_sidebar {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+  left: 0;
+  margin: 0;
+  padding: 5% 2% 2% 2%;
+  background-color: #ffffff;
+  flex-direction: row;
+  overflow: hidden;
+  opacity: 0.8
+}
+
+#supertitle
+{
+  position: absolute;
+  width:400px;
+  height: 30px;
+	color: white;
+	background-color: #3a78b1;
+
+	padding: 10px;
+  top:10px;
+	border-bottom: 1px solid white;
+}
+
+#supertitleleft, #supertitleleft a
+{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 25px;
+  font-family: "Gill Sans", sans-serif;;
+	text-decoration: none;
+	color: #fff
+
+}
+
+
+#filter
+{
+  position: absolute;
+  top: 100px;
+}
+
+
+#filtertitle
+{
+  font-size: 24px;
+  font-family: "Gill Sans", sans-serif;;
+  color: #3a78b1
+}
+
+#selectarea
+{
+  position: absolute;
+  top: 60px;
+  width:360px;
+
+}
+
+#search
+{
+  position: absolute;
+  top: 680px;
+  width:200px;
+  font-family: "Gill Sans", sans-serif;
+  left:100px
+}
+
+.mapboxgl-popup {
+max-width: 600px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+/* slider */
+
+.ui-slider .ui-btn-inner {
+    padding: 4px 0 0 0 !important;
+}
+
+.ui-slider-popup {
+    position: absolute !important;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 14px;
+    z-index: 100;
+    opacity: 0.8;
+}
+
+body {
+/* 	background: #e1e1e1; */
+}
+
+/* The icon */
+.help-tip{
+	position: absolute;
+	top: 50%;
+	left: 360px;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	text-align: center;
+	border: 2px solid #444;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 24px;
+	line-height: 42px;
+	cursor: default;
+}
+
+.help-tip:before{
+    content:'?';
+    font-family: sans-serif;
+    font-weight: normal;
+    color:#444;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+/* The tooltip */
+.help-tip p {
+	display: none;
+	font-family: sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	background-color: #FFFFFF;
+	padding: 12px 16px;
+	width: 178px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 5%);
+	border-radius: 3px;
+/* 	border: 1px solid #E0E0E0; */
+	box-shadow: 0 0px 20px 0 rgba(0,0,0,0.1);
+	color: #37393D;
+	font-size: 12px;
+	line-height: 18px;
+	z-index: 99;
+}
+
+.help-tip p a {
+	color: #067df7;
+	text-decoration: none;
+}
+
+.help-tip p a:hover {
+	text-decoration: underline;
+}
+
+/* The pointer of the tooltip */
+.help-tip p:before {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color:#FFFFFF;
+	top: -9px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+ /* Prevents the tooltip from being hidden */
+.help-tip p:after {
+	width: 10px;
+	height: 40px;
+	content:'';
+	position: absolute;
+	top: -40px;
+	left: 0;
+}
+
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+/* INTERACTIVE MAP WELCOME AND INFO POP UP BOXES */
+/*--------------------------------------------------------------*/
+#blur_out {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+  background-color: black;
+  opacity: 0.5;
+}
+
+#popup_box {
+  position: absolute;
+  width: 60%;
+  height: 300px;
+  left: 30%;
+  top: 30%;
+  z-index: 100;
+  padding: 5%;
+  background: #3774a5;
+  font-family: "Gill Sans", sans-serif;
+  border-radius: 25px;
+  padding: 20px;
+  font-size: 15px;
+  -moz-box-shadow: 0 0 5px black;
+  -webkit-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
+  overflow: auto;
+}
+
+#popup_box a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#popup_box a:hover {
+  cursor: pointer;
+  color: #5f9aca;
+}
+
+#popupBoxCloseButton:hover {
+  cursor: pointer;
+  background: #5f9aca;
+}
+
+#popup_box h1 {
+  position: relative;
+  margin: 0% 0% 2% 0%;
+  padding: 0;
+  color: #eaf8ea;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 20px;
+  color: #eaf8ea;
+}
+
+p {
+  line-height: 20px;
+  margin-bottom: 5px;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+  color: #eaf8ea;
+}
+
+#popupBoxCloseButton {
+  position: relative;
+  left:40%;
+  top:20px;
+  margin: 0% 0% 2% 0%;
+  padding: 1%;
+  width: 15%;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+  background: #005786;
+  border-radius: 10px;
+}
+
+#popupBoxCloseButton p {
+  color: #d6e4f1;
+  font-size: 20px;
+  margin: 0% 0% 2% 0%;
+}
